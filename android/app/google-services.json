@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "483877100769",
+    "project_id": "photonote-f5c94",
+    "storage_bucket": "photonote-f5c94.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483877100769:android:c44ee0e12d3c85028caba0",
+        "android_client_info": {
+          "package_name": "com.example.photo_note_with_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPs8D6yl60WoPGBomn5tRcy7DbFlc14hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
