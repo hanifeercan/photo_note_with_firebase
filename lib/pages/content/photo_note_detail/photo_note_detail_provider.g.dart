@@ -6,7 +6,7 @@ part of 'photo_note_detail_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$photoNoteDetailHash() => r'a2654fbd43ce10de142f85917a98bfd61f6ade7f';
+String _$photoNoteDetailHash() => r'd4a3901883fd6678ce296332a0a2305f00a82e0c';
 
 /// Copied from Dart SDK
 class _SystemHash {

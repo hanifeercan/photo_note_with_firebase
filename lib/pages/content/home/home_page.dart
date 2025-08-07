@@ -22,21 +22,47 @@ class HomePage extends ConsumerWidget {
           backgroundColor: const Color.fromARGB(255, 223, 221, 214),
           actions: [
             IconButton(
-              onPressed: () async {
-                try {
-                  await ref.read(authRepositoryProvider).signout();
-                } on CustomError catch (e) {
-                  if (!context.mounted) return;
-                  errorDialog(context, e);
-                }
-              },
-              icon: const Icon(Icons.logout),
-            ),
-            IconButton(
               onPressed: () {
                 ref.invalidate(getPhotoNotesProvider);
               },
               icon: const Icon(Icons.refresh),
+            ),
+            PopupMenuButton<String>(
+              icon: Icon(Icons.settings),
+              onSelected: (value) async {
+                if (value == 'changePassword') {
+                  GoRouter.of(context).goNamed(RouteNames.changePassword);
+                } else if (value == 'logout') {
+                  try {
+                    await ref.read(authRepositoryProvider).signout();
+                  } on CustomError catch (e) {
+                    if (!context.mounted) return;
+                    errorDialog(context, e);
+                  }
+                }
+              },
+              itemBuilder: (BuildContext context) => [
+                const PopupMenuItem(
+                  value: 'changePassword',
+                  child: Row(
+                    children: [
+                      Icon(Icons.password, color: Colors.black),
+                      SizedBox(width: 8),
+                      Text('Change Password'),
+                    ],
+                  ),
+                ),
+                const PopupMenuItem(
+                  value: 'logout',
+                  child: Row(
+                    children: [
+                      Icon(Icons.logout, color: Colors.black),
+                      SizedBox(width: 8),
+                      Text('Logout'),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
